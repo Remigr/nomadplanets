@@ -5,7 +5,7 @@
 var fs = require('fs');
 var express = require('express');
 var mongoose = require('mongoose');
-var config = require('config');
+var config = require('./config/config');
 
 var app = express();
 var port = process.env.PORT || 8080;

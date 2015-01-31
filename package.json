@@ -10,7 +10,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "start": "grunt && NODE_PATH=./config:./app/controllers NODE_ENV=development ./node_modules/.bin/nodemon server.js",
+    "start": "grunt && NODE_ENV=development ./node_modules/.bin/nodemon server.js",
     "postinstall": "bower install --config.interactive=false"
   },
   "dependencies": {
