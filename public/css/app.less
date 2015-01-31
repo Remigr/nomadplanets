@@ -1,0 +1,89 @@
+@np-red: #b90000;
+@np-red-dark: #5a0000;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  a {
+    color: @np-red-dark;
+  }
+  a:hover {
+    color: @np-red;
+    text-decoration: none;
+  }
+  .np-back {
+    font-size: 30px;
+  }
+  .np-big-title {
+    font-size: 70px;
+    .np-big-link {
+      color: black;
+    }
+    .np-big-link:focus {
+      text-decoration: none;
+    }
+  }
+  .np-big-about{
+    font-size: 40px;
+  }
+  .np-container {
+    z-index: 0;
+    background-color: white;
+    padding: 10px 20px;
+    margin-left: 0;
+    max-width: 850px;
+    position: relative;
+    min-height: 100%;
+    box-shadow:
+      inset -10px 0px 11px -8px #b1b1b1;
+    .ui-select-multiple {
+      border-radius: 0px;
+      font-size: 20px;
+      width: 100%;
+      .ui-select-choices {
+        border-radius: 0px;
+      }
+    }
+    .np-meta-article {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .np-article {
+      margin-bottom: 15px;
+      border-bottom: dashed 1px grey;
+      padding-bottom: 15px;
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 5px auto;
+      }
+    }
+    .np-plus-article{
+      text-align: center;
+      background-color: @np-red-dark;
+      color: white;
+      cursor: pointer;
+      height: 30px;
+      border-radius: 2px;
+      i {
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+    .np-plus-article:hover{
+      background-color: @np-red;
+    }
+    .np-text{
+    }
+  }
+  .img-back{
+    position: fixed;
+    z-index: -100;
+    top:0;
+    right:0;
+    //max-width: 600px;
+  }
+}

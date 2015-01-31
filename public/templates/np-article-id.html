@@ -1,0 +1,15 @@
+<a class="np-back" ng-href="#/articles">
+  <i class="fa fa-reply"></i> Back
+</a>
+<div class="row">
+  <div class="col-md-12 np-article">
+    <h2 ng-bind="article.title"></h2>
+    <div class="np-meta-article">
+      <a ng-href="{{article.link}}"><i class="fa fa-external-link"></i> <span ng-bind="article.blog"></span></a>
+      <span><i class="fa fa-child"></i> <span ng-bind="article.author"></span></span>
+      <span><i class="fa fa-calendar"></i> <span ng-bind="article.displayDate | date : 'longDate'"></span></span>
+      <span ng-if="article.tags.length"><i class="fa fa-tags"></i> <span ng-repeat="tag in article.tags"><span ng-bind="tag"></span><span ng-if="$last !== true">, </span> </span></span>
+    </div>
+    <div class="np-text" ng-bind-html="article.content"></div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+{
+  "Un tour deux singes": {
+    "feed": "http://untourdeuxsinges.com/en/feed/",
+    "author": "Un tour deux singes",
+    "link": "http://untourdeuxsinges.com/"
+  },
+    "Random Roads": {
+    "feed": "http://randomroads.org/rss.xml",
+    "author": "Random Roads",
+    "link": "http://randomroads.org/"
+  },
+    "Wanderlust": {
+    "feed": "http://www.wanderlust.lt/feed",
+    "author": "Simona & Mikael",
+    "link": "http://www.wanderlust.lt/"
+  },
+  "Bread Crumbs": {
+    "feed": "http://breadcrumbszine.tumblr.com/rss",
+    "author": "Bread Crumbsl",
+    "link": "http://breadcrumbszine.tumblr.com/"
+  },
+  "By the way": {
+    "feed": "https://guurisa.wordpress.com/feed/",
+    "author": "Guurisa",
+    "link": "https://guurisa.wordpress.com/"
+  },
+  "Out There": {
+    "feed": "https://aaoutthere.wordpress.com/feed/",
+    "author": "Anna & Antonio ",
+    "link": "https://aaoutthere.wordpress.com/"
+  },
+  "You Are All Tourists": {
+    "feed": "http://youarealltourists.blogspot.fr/rss.xml",
+    "author": "You Are All Tourists",
+    "link": "http://youarealltourists.blogspot.fr/"
+  },
+  "A Girl and Her Thumb": {
+    "feed": "https://agirlandherthumb.wordpress.com/feed/",
+    "author": "Jo",
+    "link": "http://youarealltourists.blogspot.fr/"
+  }
+}
