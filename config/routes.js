@@ -4,8 +4,8 @@
  */
 
 var mongoose = require('mongoose');
-var post = require('./app/controllers/post');
-var home = require('./app/controllers/home');
+var post = require('../app/controllers/post');
+var home = require('../app/controllers/home');
 
 
 

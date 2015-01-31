@@ -1,5 +1,5 @@
 var CronJob = require('cron').CronJob;
-var feedParser = require('feedParser');
+var feedParser = require('../app/controllers/feedParser');
 
 module.exports = function (app) {
 
