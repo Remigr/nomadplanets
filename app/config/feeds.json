@@ -53,5 +53,10 @@
     "feed": "http://hitchhikershandbook.com/feed/",
     "author": "Ania & Jon",
     "link": "http://hitchhikershandbook.com/"
+  },
+  "Warm Roads": {
+    "feed": "http://warmroads.de/en/feed/",
+    "author": "Stefan",
+    "link": "http://warmroads.de/en/"
   }
 }
