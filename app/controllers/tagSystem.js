@@ -28,6 +28,10 @@ function NormalizeAccents(s) {
     return r;
 }
 
+function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function tagArticle(post, callback) {
 
   var postTags = post.tags;
@@ -42,7 +46,7 @@ function tagArticle(post, callback) {
   for (var tag in tags) {
     //console.log(country)
     if(postTags.indexOf(tags[tag]) == -1 && (articleTitle.indexOf(slugify(NormalizeAccents(tags[tag]))) != -1 || articleDescription.indexOf(slugify(NormalizeAccents(tags[tag]))) != -1)) {
-        postTags.push(tags[tag]);
+        postTags.push(capitalize(tags[tag]));
     }
   }
   if (postTags.length == 0) {
