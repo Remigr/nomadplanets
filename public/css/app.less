@@ -6,6 +6,10 @@ html, body {
 }
 
 body {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
   a {
     color: @np-red-dark;
   }
@@ -31,9 +35,8 @@ body {
   .np-container {
     z-index: 0;
     background-color: white;
-    padding: 10px 20px;
+    padding: 10px 30px;
     margin-left: 0;
-    max-width: 850px;
     position: relative;
     min-height: 100%;
     box-shadow:
@@ -79,11 +82,14 @@ body {
     .np-text{
     }
   }
-  .img-back{
+  .img-container {
+    background-image: url('/img/back.jpg');
+    background-size: cover;
     position: fixed;
     z-index: -100;
     top:0;
     right:0;
+    height: 100%;
     //max-width: 600px;
   }
 }

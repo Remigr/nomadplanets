@@ -19,11 +19,15 @@
   </head>
   <body>
 
-    <div class="view-container container np-container">
-      <h1 class="np-big-title"><a href="#/articles" class="np-big-link">Nomad Planets</a> <a href="#/about" class="np-big-about">About</a></h1>
+    <div class="view-container container">
+      <div class="col-sm-8 np-container">
+        <h1 class="np-big-title"><a href="#/articles" class="np-big-link">Nomad Planets</a> <a href="#/about" class="np-big-about">About</a></h1>
 
-      <div ng-view class="view-frame"></div>
-    </div>
-    <img class="img-back" src="img/back.jpg" />
+        <div ng-view class="view-frame"></div>
+      </div>
+      <div class="col-sm-4 img-container hidden-xs">
+      </div>
+
+      </div>
   </body>
 </html>
