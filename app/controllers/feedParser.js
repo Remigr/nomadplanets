@@ -87,9 +87,8 @@ exports.parse = function () {
   function savePost(postObject) {
       //Does the doc already exist? (found by title)
       findPost(postObject, function(err, results) {
-          //It does exist - so I will delete it and then save it again with the old ID
-          if (results) {
-            /*
+          if (results && results.content.length != postObject.content.length) {
+
               var preserveID = results._id;
 
               removePost(postObject, function(error, results) {
@@ -106,10 +105,8 @@ exports.parse = function () {
                       });
                   });
               });
-            */
           }
-          //It doesnt exist so I will just save it
-          else {
+          else if(!results) {
               tagPost(postObject, function(err, tags) {
                   postObject.tags = tags;
                   postObject.save(function(err, products, numberAffected) {
