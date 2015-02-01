@@ -89,7 +89,7 @@ exports.parse = function () {
       findPost(postObject, function(err, results) {
           //It does exist - so I will delete it and then save it again with the old ID
           if (results) {
-
+            /*
               var preserveID = results._id;
 
               removePost(postObject, function(error, results) {
@@ -106,6 +106,7 @@ exports.parse = function () {
                       });
                   });
               });
+            */
           }
           //It doesnt exist so I will just save it
           else {
