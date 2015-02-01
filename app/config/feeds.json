@@ -4,12 +4,12 @@
     "author": "Un tour deux singes",
     "link": "http://untourdeuxsinges.com/"
   },
-    "Random Roads": {
+  "Random Roads": {
     "feed": "http://randomroads.org/rss.xml",
     "author": "Random Roads",
     "link": "http://randomroads.org/"
   },
-    "Wanderlust": {
+  "Wanderlust": {
     "feed": "http://www.wanderlust.lt/feed",
     "author": "Simona & Mikael",
     "link": "http://www.wanderlust.lt/"
@@ -37,6 +37,21 @@
   "A Girl and Her Thumb": {
     "feed": "https://agirlandherthumb.wordpress.com/feed/",
     "author": "Jo",
-    "link": "http://youarealltourists.blogspot.fr/"
+    "link": "https://agirlandherthumb.wordpress.com/"
+  },
+  "Puneet Sahani": {
+    "feed": "http://www.puneetsahani.com/category/travel/feed/",
+    "author": "Puneet Sahani",
+    "link": "http://www.puneetsahani.com/"
+  },
+  "Roving Snails": {
+    "feed": "http://rovingsnails.com/feed/",
+    "author": "Boris & Marta ",
+    "link": "http://rovingsnails.com/"
+  },
+  "Hitch-Hikers Handbook": {
+    "feed": "http://hitchhikershandbook.com/feed/",
+    "author": "Ania & Jon",
+    "link": "http://hitchhikershandbook.com/"
   }
 }
