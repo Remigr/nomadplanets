@@ -20,9 +20,6 @@ function getCurrentTags(page, perPage, callback) {
     .model('postModel')
     .find()
     .$where('this.tags.length > 0')
-    .sort({
-      'displayDate': 'desc'
-    })
     .select('tags')
     .exec(function(err, posts) {
       var existingTags = []
@@ -33,7 +30,7 @@ function getCurrentTags(page, perPage, callback) {
           }
         }
       }
-      callback(err, existingTags);
+      callback(err, existingTags.sort());
     });
 }
 
