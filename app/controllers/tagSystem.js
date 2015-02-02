@@ -38,36 +38,40 @@ function capitalize(string) {
 
 function tagArticle(post, callback) {
 
+  var maxTags = 10;
+
   var postTags = post.tags;
   var articleTitle = slugify(NormalizeAccents(post.title));
   var articleDescription = slugify(NormalizeAccents(post.content));
   for (var tag in tags) {
-    var tagSearch = slugify(NormalizeAccents(tags[tag]));
-    var regXSearch = new RegExp(tagSearch, "g");
-    if(postTags.indexOf(tags[tag]) == -1 && articleTitle.search(regXSearch) != -1) {
-      var articleTitleArray = articleTitle.split(" ");
-      var tagArray = tagSearch.split(" ");
-      for(var i = 0; i < tagArray.length; i++) {
-        if(articleTitleArray.indexOf(tagArray[i]) == -1) {
-          break;
+    if(postTags.length < maxTags) {
+      var tagSearch = slugify(NormalizeAccents(tags[tag]));
+      var regXSearch = new RegExp(tagSearch, "g");
+      if(postTags.indexOf(tags[tag]) == -1 && articleTitle.search(regXSearch) != -1) {
+        var articleTitleArray = articleTitle.split(" ");
+        var tagArray = tagSearch.split(" ");
+        for(var i = 0; i < tagArray.length; i++) {
+          if(articleTitleArray.indexOf(tagArray[i]) == -1) {
+            break;
+          }
+        }
+        if(i == tagArray.length) {
+          postTags.push(capitalize(tags[tag]));
         }
       }
-      if(i == tagArray.length) {
-        postTags.push(capitalize(tags[tag]));
-      }
-    }
-    else if (postTags.indexOf(tags[tag]) == -1 && articleDescription.search(regXSearch) != -1) {
-      var articleDescriptionArray = articleDescription.split(" ");
-      var tagArray = tagSearch.split(" ");
-      if(post.title == "Beneficio, Alpujarra, Sierra Nevada I") {
-      }
-      for(var i = 0; i < tagArray.length; i++) {
-        if(articleDescriptionArray.indexOf(tagArray[i]) == -1) {
-          break;
+      else if (postTags.indexOf(tags[tag]) == -1 && articleDescription.search(regXSearch) != -1) {
+        var articleDescriptionArray = articleDescription.split(" ");
+        var tagArray = tagSearch.split(" ");
+        if(post.title == "Beneficio, Alpujarra, Sierra Nevada I") {
         }
-      }
-      if(i == tagArray.length) {
-        postTags.push(capitalize(tags[tag]));
+        for(var i = 0; i < tagArray.length; i++) {
+          if(articleDescriptionArray.indexOf(tagArray[i]) == -1) {
+            break;
+          }
+        }
+        if(i == tagArray.length) {
+          postTags.push(capitalize(tags[tag]));
+        }
       }
     }
   }
