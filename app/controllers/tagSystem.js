@@ -2,7 +2,7 @@ var tags = require('../config/tags.json');
 
 function slugify(text) {
   return text.toString().toLowerCase()
-    .replace(/\s+/g, "") // Replace spaces with space
+    //.replace(/\s+/g, "") // Replace spaces with space
     .replace(/[^\w\-\s]+/g, ' ') // Remove all non-word chars
     .replace(/\-+/g, ' - ') //adds spaces between pre-existant -
     .replace(/\-\-+/g, ' - ') // Replace multiple - with single -
@@ -13,7 +13,7 @@ function slugify(text) {
 function NormalizeAccents(s) {
     var r = s.toLowerCase();
 
-    r = r.replace(new RegExp("\\s", 'g'), "");
+    //r = r.replace(new RegExp("\\s", 'g'), "");
     r = r.replace(new RegExp("[àáâãäå]", 'g'), "a");
     r = r.replace(new RegExp("æ", 'g'), "ae");
     r = r.replace(new RegExp("ç", 'g'), "c");
@@ -29,24 +29,46 @@ function NormalizeAccents(s) {
 }
 
 function capitalize(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  var words = string.split(" ");
+  for(var word in words) {
+    words[word] = words[word].charAt(0).toUpperCase() + words[word].slice(1);
+  }
+  return words.join(" ");
 }
 
 function tagArticle(post, callback) {
 
   var postTags = post.tags;
-  var articleTitle = post.title.split(" ");
-  for(var i in articleTitle) {
-    articleTitle[i] = slugify(NormalizeAccents(articleTitle[i]));
-  }
-  var articleDescription = post.content.split(" ");
-  for(var i in articleDescription) {
-    articleDescription[i] = slugify(NormalizeAccents(articleDescription[i]))
-  }
+  var articleTitle = slugify(NormalizeAccents(post.title));
+  var articleDescription = slugify(NormalizeAccents(post.content));
   for (var tag in tags) {
-    //console.log(country)
-    if(postTags.indexOf(tags[tag]) == -1 && (articleTitle.indexOf(slugify(NormalizeAccents(tags[tag]))) != -1 || articleDescription.indexOf(slugify(NormalizeAccents(tags[tag]))) != -1)) {
+    var tagSearch = slugify(NormalizeAccents(tags[tag]));
+    var regXSearch = new RegExp(tagSearch, "g");
+    if(postTags.indexOf(tags[tag]) == -1 && articleTitle.search(regXSearch) != -1) {
+      var articleTitleArray = articleTitle.split(" ");
+      var tagArray = tagSearch.split(" ");
+      for(var i = 0; i < tagArray.length; i++) {
+        if(articleTitleArray.indexOf(tagArray[i]) == -1) {
+          break;
+        }
+      }
+      if(i == tagArray.length) {
         postTags.push(capitalize(tags[tag]));
+      }
+    }
+    else if (postTags.indexOf(tags[tag]) == -1 && articleDescription.search(regXSearch) != -1) {
+      var articleDescriptionArray = articleDescription.split(" ");
+      var tagArray = tagSearch.split(" ");
+      if(post.title == "Beneficio, Alpujarra, Sierra Nevada I") {
+      }
+      for(var i = 0; i < tagArray.length; i++) {
+        if(articleDescriptionArray.indexOf(tagArray[i]) == -1) {
+          break;
+        }
+      }
+      if(i == tagArray.length) {
+        postTags.push(capitalize(tags[tag]));
+      }
     }
   }
   if (postTags.length == 0) {
